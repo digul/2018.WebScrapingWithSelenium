@@ -17,6 +17,10 @@ public class HomePage extends Page {
 		driver.get(url);
 	}
 	
+	public void goToLogin() {
+		driver.findElement(By.linkText("LOG IN")).click();
+	}
+	
 	public boolean isAt() {
 
 		return driver.getTitle().equals(title);
