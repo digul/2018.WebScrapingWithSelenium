@@ -6,9 +6,20 @@ import com.coska.lab.selenium.lib.Page;
 
 public class HomePage extends Page {
 
+	static String url = "https://www.surveymonkey.com";
+	static String title = "SurveyMonkey: The World’s Most Popular Free Online Survey Tool";
+	
 	public HomePage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+	}
+	
+	public void goTo() {
+		driver.get(url);
+	}
+	
+	public boolean isAt() {
+
+		return driver.getTitle().equals(title);
 	}
 
 }
