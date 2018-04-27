@@ -14,6 +14,7 @@ public class HomePageTest {
 	public void canGoToHomePage() {
 		HomePage homePage = new HomePage(driver);
 		homePage.goTo();
+		homePage.goToLogin();
 		Assert.assertTrue(homePage.isAt());
 	}
 	
