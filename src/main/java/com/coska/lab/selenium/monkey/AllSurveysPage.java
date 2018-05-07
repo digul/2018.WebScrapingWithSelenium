@@ -1,6 +1,5 @@
 package com.coska.lab.selenium.monkey;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -8,20 +7,23 @@ import com.coska.lab.selenium.lib.Page;
 import com.coska.lab.selenium.util.ConfigUtil;
 import com.coska.lab.selenium.util.Log;
 
-public class DashboardPage extends Page {
-	private static String url = ConfigUtil.getConfig("monkey.url") + "/dashboard/";
-
-	public DashboardPage(WebDriver driver) {
+public class AllSurveysPage extends Page {
+	
+	public AllSurveysPage(WebDriver driver) {
 		super(driver);
 	}
+
+	private static String url = ConfigUtil.getConfig("monkey.url") + "/home/?ut_source=dashboard_survey_list";
+
+	@Override
 	public void goTo() {
-		this.driver.get(url);
+		driver.get(url);
 	}
 
+	@Override
 	public boolean isAt() {
-
 		try {
-			return (driver.findElement(By.id("dashweb-scope")) != null);
+			return (driver.findElement(By.id("module-active-surveys-new")) != null);
 			
 		} catch (Exception e) {
 			Log.trace("This is re-located another(i.e. login) page.");
@@ -29,9 +31,8 @@ public class DashboardPage extends Page {
 		}
 	}
 	
-
 	public SurveyPage getSurveyPathPage(String surveyName) {
-		this.wait(By.cssSelector("ul.survey-items-list")); // survey link text is in here
+		this.wait(By.cssSelector(".main.table")); // survey link text is in here
 		return Pages.surveyPage(surveyName);
 	}
 }
