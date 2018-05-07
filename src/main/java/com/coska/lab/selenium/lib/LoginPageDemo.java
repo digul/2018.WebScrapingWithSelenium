@@ -9,7 +9,7 @@ public class LoginPageDemo {
 
 	public static void main(String[] args) {
 
-		// System.setProperty("webdriver.chrome.driver", "C:/Coska/drivers/chromedriver/chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "D:/Coska/drivers/chromedriver/chromedriver.exe");
 		//	System.setProperty("webdriver.gecko.driver", "C:/Coska/drivers/geckodriver-v0.20.1-win64/geckodriver.exe");
 		
 		/* Test to login and submit input data */

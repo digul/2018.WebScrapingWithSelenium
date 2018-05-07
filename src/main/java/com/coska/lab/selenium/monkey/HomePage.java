@@ -1,5 +1,6 @@
 package com.coska.lab.selenium.monkey;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.coska.lab.selenium.lib.Page;
@@ -19,7 +20,7 @@ public class HomePage extends Page {
 	
 	public void goToLogin() {
 		driver.findElement(By.linkText("LOG IN")).click();
-	}
+	}	
 	
 	public boolean isAt() {
 
