@@ -3,10 +3,8 @@ package com.coska.lab.selenium.monkey;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.AfterClass;
 import org.junit.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.coska.lab.selenium.util.ConfigUtil;
 
@@ -30,7 +28,7 @@ public class DashboardPageTest {
 	
 	
 
-	//@Test
+	@Test
 	public void testFindResultFromAllSurveys() {
 		String defaultSurveyName = ConfigUtil.getConfig("monkey.surveyName");
 
@@ -59,7 +57,7 @@ public class DashboardPageTest {
 		
 	}
 	
-	//@AfterClass
+	@AfterClass
 	public static void cleanUp() {
 		Pages.driver.close();
 	} 
