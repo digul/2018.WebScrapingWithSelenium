@@ -30,7 +30,7 @@ public class SurveyPage extends Page {
 			
 			// declare with survey name
 		} catch(NoSuchElementException nse) {
-			Log.trace("Cannot find link in this page.");
+			Log.trace("Cannot find '"+ this.linkName +"' link in this page.");
 		}
 		
 	}
@@ -42,6 +42,11 @@ public class SurveyPage extends Page {
 	
 	public String surveyName() {
 		return this.surveyElement.getText();
+	}
+	
+	public AnalyzePage getAnalyzePage() {
+		this.wait(By.className("global-navigation-header-tabs-left"));
+		return Pages.analyzePage();
 	}
 
 }
