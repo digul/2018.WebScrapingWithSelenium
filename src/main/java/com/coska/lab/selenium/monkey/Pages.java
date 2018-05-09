@@ -41,4 +41,10 @@ public class Pages {
 		PageFactory.initElements(driver, surveyPage);
 		return surveyPage;
 	}
+
+	public static AnalyzePage analyzePage() {
+		AnalyzePage analyzePage = new AnalyzePage(driver);
+		PageFactory.initElements(driver, analyzePage);
+		return analyzePage;
+	}
 }
