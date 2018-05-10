@@ -33,6 +33,7 @@ public class DashboardPageTest {
 		String defaultSurveyName = ConfigUtil.getConfig("monkey.surveyName");
 
 		Pages.allSurveysPage().goTo();
+		Assert.assertTrue(Pages.allSurveysPage().isAt());
 		
 		SurveyPage surveyPage = Pages.allSurveysPage().getSurveyPathPage(defaultSurveyName);
 		surveyPage.goTo();
@@ -42,19 +43,18 @@ public class DashboardPageTest {
 
 	
 	@Test
-	public void testClickDefaultResultLink() {
+	public void testFindResultFromDashboard() {
 
 		// This is request from CKLAB-002 issue. 
 		String defaultSurveyName = ConfigUtil.getConfig("monkey.surveyName");
 		
-		Pages.dashboardPage().goTo();
+		dashboardPage.goTo();
 		Assert.assertTrue(dashboardPage.isAt());
 		
 		SurveyPage surveyPage = Pages.dashboardPage().getSurveyPathPage(defaultSurveyName);
 		surveyPage.goTo();
 		 
 		Assert.assertTrue(surveyPage.isAt());
-		
 	}
 	
 	@AfterClass

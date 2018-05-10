@@ -24,13 +24,14 @@ public class SurveyPage extends Page {
 	
 	@Override
 	public void goTo() {
+		Log.trace("## goto survey page by click : "+ this.linkName);
 		try {
 			WebElement linkElement = this.driver.findElement(By.linkText(this.linkName));
 			linkElement.click();
 			
 			// declare with survey name
 		} catch(NoSuchElementException nse) {
-			Log.trace("Cannot find link in this page.");
+			Log.trace("Cannot find '"+ this.linkName +"' link in this page.");
 		}
 		
 	}
@@ -42,6 +43,11 @@ public class SurveyPage extends Page {
 	
 	public String surveyName() {
 		return this.surveyElement.getText();
+	}
+	
+	public AnalyzePage getAnalyzePage() {
+		this.wait(By.className("global-navigation-header-tabs-left"));
+		return Pages.analyzePage();
 	}
 
 }

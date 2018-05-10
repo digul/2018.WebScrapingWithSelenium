@@ -2,6 +2,7 @@ package com.coska.lab.selenium.lib;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,9 +18,12 @@ public abstract class Page {
     
     public abstract void goTo();
     public abstract boolean isAt();
-	
-	protected void wait(By by) {
-		this.wait.until(ExpectedConditions.presenceOfElementLocated(by));
-	}
     
+    
+	protected void wait(By by) {
+		this.wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+	}
+	protected void wait(WebElement webElement) {
+		this.wait.until(ExpectedConditions.visibilityOf(webElement));
+	}
 }
