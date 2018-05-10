@@ -40,6 +40,7 @@ public class AnalyzePage extends Page {
 
 	@Override
 	public void goTo() {
+		Log.trace("## goto analyze page by click.. ");
 		wait(analyzeElement);
 		analyzeElement.click();
 	}

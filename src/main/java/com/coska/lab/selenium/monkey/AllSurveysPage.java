@@ -17,6 +17,7 @@ public class AllSurveysPage extends Page {
 
 	@Override
 	public void goTo() {
+		Log.trace("## goto "+ url);
 		driver.get(url);
 	}
 

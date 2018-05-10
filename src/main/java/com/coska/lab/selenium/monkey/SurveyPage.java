@@ -24,6 +24,7 @@ public class SurveyPage extends Page {
 	
 	@Override
 	public void goTo() {
+		Log.trace("## goto survey page by click : "+ this.linkName);
 		try {
 			WebElement linkElement = this.driver.findElement(By.linkText(this.linkName));
 			linkElement.click();

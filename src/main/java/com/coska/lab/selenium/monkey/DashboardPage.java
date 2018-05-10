@@ -15,6 +15,7 @@ public class DashboardPage extends Page {
 		super(driver);
 	}
 	public void goTo() {
+		Log.trace("## goto "+ url);
 		this.driver.get(url);
 	}
 
